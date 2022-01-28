@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(136, 148, 156);
+    padding: 5px 15px 0 15px;
+    margin: 0 0 5px 0;
+}
+
+.button{
+    margin: 5px 0 0 15px;
+    border-radius: 10px;
+    width: 65px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    color: #111;
+    text-align: center;
+}
+
+.button:hover{
+    background: rgb(140, 143, 146);
+    width: 80px;
+    height: 25px;
+    transition: ease 0.2s;
+}

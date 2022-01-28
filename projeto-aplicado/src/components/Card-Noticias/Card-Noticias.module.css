@@ -1,0 +1,49 @@
+.card{
+    border: solid 1px ;
+    max-width: 70%;
+    margin: auto;
+    padding: 10px;
+    background:rgb(178, 189, 201);
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+
+.notas{
+    display: flex;
+}
+
+.h1{
+    font-size: 17px;
+    padding:10px;
+    text-align: center;
+}
+
+.img{
+    width: 250px
+}
+.p{
+    padding:  20px;
+    font-family: arial,sans-serif;
+    text-align: center;
+}
+.a{
+    text-decoration: none;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    color: #111;
+    border: 1px solid #111;
+    background: rgb(255, 255, 255);    
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.a:hover{
+    background: rgb(140, 143, 146); 
+    color: white;
+    transition: ease 0.3s
+}
+
+
+.button{
+    text-align: center;
+}

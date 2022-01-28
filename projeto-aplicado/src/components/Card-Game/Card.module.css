@@ -1,0 +1,67 @@
+.Geral{
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    color:black;    
+    margin: auto;
+}
+
+.Card{
+    margin: 20px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    max-width: 300px;
+    background:rgb(178, 189, 201);
+}
+
+.lista{
+    display: flex;
+    justify-content: space-between;
+    margin: 1px 5px 5px 5px;
+    font-family: arial;    
+}
+
+img{
+    display: flex;
+    width: 300px;
+}
+
+
+.li{
+    display: flex;
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.button{
+    margin: 5px 0 0 15px;
+    border-radius: 10px;
+    width: 65px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+}
+
+.button:hover{
+    background: rgb(140, 143, 146);
+    width: 80px;
+    height: 25px;
+    transition: ease 0.2s;
+    color: white;
+}
+
+
+
+.ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.input{
+    display: flex;
+    margin: 10px 0 10px 20px;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
