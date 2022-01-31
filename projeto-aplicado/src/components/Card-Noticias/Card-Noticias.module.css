@@ -1,6 +1,6 @@
 .card{
     border: solid 1px ;
-    max-width: 70%;
+    max-width: 720px;
     margin: auto;
     padding: 10px;
     background:rgb(178, 189, 201);
@@ -19,7 +19,8 @@
 }
 
 .img{
-    width: 250px
+    width: 250px;
+    margin: auto;
 }
 .p{
     padding:  20px;
@@ -35,15 +36,29 @@
     background: rgb(255, 255, 255);    
     padding: 5px;
     border-radius: 3px;
+    height: 300px;
+    width: 500px;
+    margin: auto;
+
 }
 
 .a:hover{
     background: rgb(140, 143, 146); 
     color: white;
-    transition: ease 0.3s
+    transition: ease 0.3s;
 }
 
 
 .button{
     text-align: center;
+}
+
+.ul{
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.li{
+    list-style: none;
 }
