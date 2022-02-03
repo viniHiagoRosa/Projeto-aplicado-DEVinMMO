@@ -8,7 +8,7 @@ export const Header = () => {
         <header className={styles.Header}>
             <h1 > DEVinMMO </h1>
             <div>
-                <button className={styles.button}  > Noticias </button>
+                <button className={styles.button}  onClick={() => navigate('noticias')}  > Noticias </button>
                 <button className={styles.button} onClick={() => navigate('/')} > Games </button>
             </div>
         </header>

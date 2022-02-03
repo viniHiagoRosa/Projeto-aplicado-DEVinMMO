@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-image: url('https://viciados.net/wp-content/uploads/2021/12/GTA-5-RTX-3090-.webp')
+        background-image: url('http://static.marriedgames.com.br/CapaPost.png');
     }
 `

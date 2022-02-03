@@ -1,22 +1,23 @@
-import styles from './Card-Noticias.module.css';
+import { Botao, Card, Descricao, Imagem, Notas, Noticia, Title } from "./Card-Noticias.styled";
+
 
 export const Card_Noticias = ({noticia}) => {
     return(
     <div >
-      <li className={styles.li}>        
-        <div className={styles.card}>
-          <div className={styles.notas}>
-          <a href={noticia.article_url} target="_blank" className={styles.a} rel="noopener">
-            <img src={noticia.main_image} alt={noticia.title} className={styles.img}/>
-            <div>
-              <h1 className={styles.h1}>{noticia.title}</h1>
-              <p className={styles.p}>{noticia.short_description}</p>
-            </div>            
-           </a>
-          </div>
+      <Noticia>        
+        <Card>
+          <Notas>
+          <Botao href={noticia.article_url} target="_blank" >
+            <Imagem src={noticia.main_image} alt={noticia.title}/>
+            
+              <Title>{noticia.title}</Title>
+              <Descricao> {noticia.short_description}</Descricao>
+                       
+           </Botao>
+          </Notas>
           
-        </div>               
-      </li>      
+        </Card>               
+      </Noticia>      
     </div>      
     );    
   };

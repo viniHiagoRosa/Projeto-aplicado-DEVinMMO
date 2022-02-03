@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import { getGames } from "../../services/Game-service";
+import { getGames } from "../../services/Games-service";
 import { Card_Game } from '../../components/Card-Game/'
+import { Busca, Ul } from './games.styled'
 
 export const Games = () => {
     const [termoBusca, setTermoBusca] = useState('');  
     const [games, setGames] = useState([]);
     const [ gamesFiltrados, setGamesFiltrado] = useState([]);
+
     useEffect(() => {
       getGames().then((listaGames) => {
-        const gamesFilter = listaGames.slice(0,12)
+        const gamesFilter = listaGames.slice(0,16)
         setGames(gamesFilter);
         setGamesFiltrado(gamesFilter);
         console.log(gamesFilter)
       })
     }, []);
+
     useEffect(() => {
      if(termoBusca){
       const listaFiltrada = games.filter((game) =>
@@ -26,21 +29,18 @@ export const Games = () => {
 
     return (
         <div>
-        <input
+        <Busca
           onChange={(event) => {
             setTermoBusca(event.target.value);
           }}
           type="text"
           placeholder="Digite o nome do Jogo"
-          />
-       
-      
-      
-          <ul>
+          />  
+          <Ul>
           {gamesFiltrados.length === 0 
           ? 'Nenhuma Noticia encontrada'
           : gamesFiltrados.map((game) => <Card_Game key={game.id} game={game}/> )}          
-        </ul>
+        </Ul>
   
         </div>
      )

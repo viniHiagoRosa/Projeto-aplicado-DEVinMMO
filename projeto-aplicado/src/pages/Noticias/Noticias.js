@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Card_Noticias } from "../../components/Card-Noticias/Card-Noticias";
 import { getNoticias } from "../../services/Noticias-services";
+import { Ul } from "../games/games.styled";
+import { Busca } from "./Noticias.styled";
 
 export const Noticias = () => {
   const [termoBusca, setTermoBusca] = useState('');  
@@ -9,7 +11,7 @@ export const Noticias = () => {
 
   useEffect(() => {
     getNoticias().then((listaNoticias) => {
-      const noticiasFilter = listaNoticias.slice(0,12)
+      const noticiasFilter = listaNoticias.slice(0,9)
       setNoticias(noticiasFilter);
       setNoticiasFiltrado(noticiasFilter);
       console.log(noticiasFilter)
@@ -29,21 +31,19 @@ export const Noticias = () => {
     return (
     
         <div>
-      <input
+      <Busca
         onChange={(event) => {
           setTermoBusca(event.target.value);
         }}
         type="text"
         placeholder="Digite o nome do Jogo"
         />
-     
-    
-    
-        <ul>
+
+        <Ul>
         {noticiasFiltrados.length === 0 
         ? 'Nenhuma Noticia encontrada'
         : noticiasFiltrados.map((noticia) => <Card_Noticias key={noticia.id} noticia={noticia}/> )}          
-      </ul>
+      </Ul>
 
       </div>
     )
