@@ -25,21 +25,17 @@ export const PDetalhes = styled.div`
     max-width: 400px;
     justify-content: space-between;
     margin: 5px 0 10px 25px;
-    font-family: Arial;
     font-weight: bold;
 `
 
 export const Paragrafo = styled.p`
     font-weight: bold;
-    font-family: arial;
     color: white;
 `
 
 export const Descricao = styled.div`
     max-width: 400px;
-    font-family: Arial;
     margin: 0 0 10px 25px;
-    text-align: center;
 `
 
 export const SpaceScreen = styled.div`
@@ -50,5 +46,16 @@ export const ImgScreen = styled.img`
     width: 200px;
 `
 
+export const TitleDescription = styled.h2`
+    Color:white;
+    margin-top: 10px; 
+` 
 
 
+export const DivInformacoes = styled.div`
+    margin: 10px 0 0 55px 
+`
+
+export const Comentario = styled.div`
+    margin: 0px 0 10px 55px;
+`

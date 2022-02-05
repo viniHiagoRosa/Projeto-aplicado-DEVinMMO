@@ -8,6 +8,7 @@ import { Noticias } from '../pages/Noticias/Noticias'
 export const Router = () => (
     <Routes>
         <Route path ='/' element={<Games />} />
-        <Route path ='/noticias' element={<Game />} />
+        <Route path ='noticias' element={<Noticias />} />
+        <Route path = 'detalhes/:id' element={<Game />} />
     </Routes>
 );

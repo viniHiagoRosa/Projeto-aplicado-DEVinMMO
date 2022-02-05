@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-image: url('http://static.marriedgames.com.br/CapaPost.png');
+        background-image: url('https://i.pinimg.com/originals/05/da/2a/05da2a8d0f95327244676edabfb7b72b.jpg');
     }
 `

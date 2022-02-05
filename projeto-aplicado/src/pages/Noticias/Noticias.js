@@ -11,7 +11,7 @@ export const Noticias = () => {
 
   useEffect(() => {
     getNoticias().then((listaNoticias) => {
-      const noticiasFilter = listaNoticias.slice(0,9)
+      const noticiasFilter = listaNoticias.slice(0,6)
       setNoticias(noticiasFilter);
       setNoticiasFiltrado(noticiasFilter);
       console.log(noticiasFilter)

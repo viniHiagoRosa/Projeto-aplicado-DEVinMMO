@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { getGame } from "../../services/Game-service";
-import { Descricao, Detalhes, Img, ImgScreen, Paragrafo, PDetalhes, ScreeenShots, SpaceScreen, thumbnailDetalhe, TitleDetalhe } from "./Game.styled";
+import {  Descricao, Detalhes, Img, ImgScreen, Paragrafo, PDetalhes, ScreeenShots, SpaceScreen, TitleDescription, TitleDetalhe } from "./Game.styled";
+import { Formulario } from "../../components/Formulario";
 
 export const Game = () => {
     const [ detalhes, setDetalhes ] = useState({});
     const [carregando, setCarregando] = useState(true);
+    
 
     useEffect(() => {
         getGame().then((gameDetalhes => {
@@ -13,17 +15,14 @@ export const Game = () => {
             console.log(gameFiltro)
             setCarregando(false)      
         }))
-    }, [])
+    }, [])  
 
     if(carregando){
         return <p>Carregando...</p>
         
     }
-
-   
-
     return(
-        
+        <>
         <Detalhes>
             <div>
                 
@@ -31,30 +30,42 @@ export const Game = () => {
                 {detalhes.title}    
             </TitleDetalhe>  
             <Img src={detalhes.thumbnail} />
-                <PDetalhes>        
-                    <Paragrafo>Editora: {detalhes.publisher}</Paragrafo> 
-                    <Paragrafo>Genêro: {detalhes.genre}</Paragrafo>
+                <PDetalhes>  
+                    <div>
+                        <TitleDescription>Editora</TitleDescription>
+                    <Paragrafo>{detalhes.publisher}</Paragrafo> 
+                    </div>   
+                    <div>
+                    <TitleDescription> Genero</TitleDescription>
+                    <Paragrafo>{detalhes.genre}</Paragrafo>
+                    </div>   
                 </PDetalhes>
                 <Descricao>
-                    <Paragrafo >{detalhes.short_description}</Paragrafo >
+                <TitleDescription> Descrição </TitleDescription> 
+                    <Paragrafo > {detalhes.short_description}</Paragrafo >
+
+                <TitleDescription>Requisitos do Sistema </TitleDescription>
+                <Paragrafo > Sistema Operacional: {detalhes.minimum_system_requirements.os}</Paragrafo>
+                <Paragrafo > Processador: {detalhes.minimum_system_requirements.processor}</Paragrafo>
+                <Paragrafo > Memória: {detalhes.minimum_system_requirements.memory}</Paragrafo>
+                <Paragrafo > Gráficos: {detalhes.minimum_system_requirements.graphics}</Paragrafo>
+                <Paragrafo > Espaço de disco: {detalhes.minimum_system_requirements.storage}</Paragrafo>
                 </Descricao>
             </div>
             <SpaceScreen>
 
-                {detalhes?. screenshots?.length && (<ScreeenShots src={detalhes.screenshots[0].image} alt={detalhes.title} />)}
+                {detalhes?.screenshots?.length && (<ScreeenShots src={detalhes.screenshots[0].image} alt={detalhes.title} />)}
                 <div>
 
-                {detalhes?. screenshots?.length && (<ImgScreen src={detalhes.screenshots[1].image} alt={detalhes.title} />)}
-                {detalhes?. screenshots?.length && (<ImgScreen src={detalhes.screenshots[2].image} alt={detalhes.title} />)}
-                {detalhes?. screenshots?.length && (<ImgScreen src={detalhes.screenshots[3].image} alt={detalhes.title} />)}
+                {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[1].image} alt={detalhes.title} />)}
+                {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[2].image} alt={detalhes.title} />)}
+                {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[3].image} alt={detalhes.title} />)}
             
                 </div>
-            </SpaceScreen>
-              
+            </SpaceScreen>              
         </Detalhes>
-        
-        
-        
-       
+        <Formulario />      
+
+        </>   
         )
     }
