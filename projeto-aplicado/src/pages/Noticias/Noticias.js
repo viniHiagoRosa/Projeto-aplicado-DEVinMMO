@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card_Noticias } from "../../components/Card-Noticias/Card-Noticias";
+import { Footer } from "../../components/Footer";
 import { getNoticias } from "../../services/Noticias-services";
 import { Ul } from "../games/games.styled";
 import { Busca } from "./Noticias.styled";
@@ -43,8 +44,7 @@ export const Noticias = () => {
         {noticiasFiltrados.length === 0 
         ? 'Nenhuma Noticia encontrada'
         : noticiasFiltrados.map((noticia) => <Card_Noticias key={noticia.id} noticia={noticia}/> )}          
-      </Ul>
-
+       </Ul>
       </div>
     )
 }

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-
 import * as Yup from 'yup';
-import { Paragrafo } from '../../pages/Game/Game.styled';
-import { Comentarios, MainFormulario, Nome, SecondaryFormulario } from './Formulario.styled';
+import { Comentarios, H3, MainFormulario, Nome, ParagrafoComentario, SecondaryFormulario } from './Formulario.styled';
+import { useParams } from 'react-router-dom';
+import styles from './Formulario.module.css'; 
 
 const KEY_LOCALSTORAGE = 'COMENTARIOS';
 
 export const Formulario = () => {
-  const idGame = '';
+  const{ id } = useParams()
+  const idGame = id;
   const [comentarioJogo, setComentarioJogo] = useState({});
 
   useEffect(() => {
@@ -69,15 +69,15 @@ export const Formulario = () => {
         {({ isSubmitting, resetForm, isValid }) => (
             <Form>
             <div>
-
-            <Field name="nome" placeholder="Nome" />
+            <H3>Comentários</H3>
+            <Field name="nome" placeholder="Nome" className={styles.name}/>
             <ErrorMessage name="nome" style={{ color: 'red' }} component="span" />
 
-            <Field name="email" placeholder="E-mail" />
+            <Field name="email" placeholder="E-mail" className={styles.email}/>
             <ErrorMessage name="email" style={{ color: 'red' }} component="span" />
 
             </div>
-            <Field name="comentario" placeholder="Comentário" />
+            <Field name="comentario" placeholder="Comentário"  className={styles.comentario}/>
             <ErrorMessage name="comentario" style={{ color: 'red' }} component="span" />
 
             <button type="submit" disabled={isSubmitting || !isValid}>
@@ -98,12 +98,12 @@ export const Formulario = () => {
             </Comentarios>
 
             <Comentarios>
-                <Paragrafo>{item.comentario}</Paragrafo>
+                <ParagrafoComentario>{item.comentario}</ParagrafoComentario>
             </Comentarios>
         </SecondaryFormulario>
 
 ))}
-    </MainFormulario>
+</MainFormulario>
     </>
   );
 };

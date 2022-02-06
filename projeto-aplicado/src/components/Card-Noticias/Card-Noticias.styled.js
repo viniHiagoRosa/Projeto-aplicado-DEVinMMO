@@ -43,6 +43,10 @@ export const Botao = styled.a`
     width: 500px;
     margin: auto;
     align-item: center;
+    &:hover{
+        background: #111;
+        color: white;
+    }
 `
 
 export const Noticia = styled.li`

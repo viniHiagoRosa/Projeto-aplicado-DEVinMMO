@@ -6,7 +6,7 @@ export const Header = () => {
     const navigate = useNavigate();
     return(
         <header className={styles.Header}>
-            <h1 > DEVinMMO </h1>
+            <h1 onClick={() => navigate('/')} > DEVinMMO </h1>
             <div>
                 <button className={styles.button}  onClick={() => navigate('noticias')}  > Noticias </button>
                 <button className={styles.button} onClick={() => navigate('/')} > Games </button>

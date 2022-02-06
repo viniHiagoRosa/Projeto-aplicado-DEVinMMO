@@ -1,8 +1,10 @@
+import { Footer } from "../Footer";
 import { Botao, Card, Descricao, Imagem, Notas, Noticia, Title } from "./Card-Noticias.styled";
 
 
 export const Card_Noticias = ({noticia}) => {
     return(
+    
     <div >
       <Noticia>        
         <Card>
@@ -17,7 +19,9 @@ export const Card_Noticias = ({noticia}) => {
           </Notas>
           
         </Card>               
-      </Noticia>      
+      </Noticia>          
     </div>      
+    
+    
     );    
   };

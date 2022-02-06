@@ -2,20 +2,27 @@ import { useEffect, useState } from "react"
 import { getGame } from "../../services/Game-service";
 import {  Descricao, Detalhes, Img, ImgScreen, Paragrafo, PDetalhes, ScreeenShots, SpaceScreen, TitleDescription, TitleDetalhe } from "./Game.styled";
 import { Formulario } from "../../components/Formulario";
+import { useParams } from "react-router-dom";
 
 export const Game = () => {
     const [ detalhes, setDetalhes ] = useState({});
     const [carregando, setCarregando] = useState(true);
+    const { id } = useParams()
     
 
     useEffect(() => {
-        getGame().then((gameDetalhes => {
+        getGame(id).then((gameDetalhes => {
             const gameFiltro = gameDetalhes
             setDetalhes(gameFiltro)
             console.log(gameFiltro)
             setCarregando(false)      
+                
+            
+                
         }))
     }, [])  
+
+    console.log(carregando, detalhes)
 
     if(carregando){
         return <p>Carregando...</p>
@@ -56,7 +63,7 @@ export const Game = () => {
 
                 {detalhes?.screenshots?.length && (<ScreeenShots src={detalhes.screenshots[0].image} alt={detalhes.title} />)}
                 <div>
-
+    
                 {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[1].image} alt={detalhes.title} />)}
                 {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[2].image} alt={detalhes.title} />)}
                 {detalhes?.screenshots?.length && (<ImgScreen src={detalhes.screenshots[3].image} alt={detalhes.title} />)}

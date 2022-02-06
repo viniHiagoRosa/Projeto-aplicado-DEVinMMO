@@ -28,3 +28,7 @@
     height: 25px;
     transition: ease 0.2s;
 }
+
+h1 {
+    cursor: pointer;
+}

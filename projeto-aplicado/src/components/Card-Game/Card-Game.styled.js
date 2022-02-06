@@ -35,10 +35,8 @@ export const P = styled.p`
     font-weight: bold;
     text-align: center;
     padding: 5px;
+    max-width: 200px
 `
-
-
-
 
 
 

@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { getGames } from "../../services/Games-service";
-import { Card_Game } from '../../components/Card-Game/'
+import { CardGame } from '../../components/Card-Game/'
 import { Busca, Ul } from './games.styled'
-import { Link,  useNavigate,  useParams } from "react-router-dom";
 
 export const Games = () => {
     const [termoBusca, setTermoBusca] = useState('');  
     const [games, setGames] = useState([]);
     const [ gamesFiltrados, setGamesFiltrado] = useState([]);
-
-    const { id } = useParams()
-    const navigate = useNavigate()
-
+  
+    
     useEffect(() => {
       getGames().then((listaGames) => {
-        const gamesFilter = listaGames.slice(0,16)
+        const gamesFilter = listaGames
         setGames(gamesFilter);
         setGamesFiltrado(gamesFilter);
         console.log(gamesFilter)
@@ -40,20 +37,11 @@ export const Games = () => {
           type="text"
           placeholder="Digite o nome do Jogo"
           />  
-          <Ul>
-            
+        <Ul>            
           {gamesFiltrados.length === 0 
           ? 'Nenhuma Noticia encontrada'
-          : gamesFiltrados.map((game) => 
-          
-          
-          <Link to={`detalhes/${id}`}>
-          
-            <Card_Game key={game.id} game={game}/> {id}
-
-          </Link>
-          
-          
+          : gamesFiltrados.map((game) =>                       
+            <CardGame key={game.id} game={game}  />              
           )}          
         </Ul>
   

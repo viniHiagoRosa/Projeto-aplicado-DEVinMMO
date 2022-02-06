@@ -1,0 +1,14 @@
+.comentario{
+    width: 350px;
+    height: 150px;
+    margin: 0 0 10px 10px
+}
+
+.name{
+    width: 175px;
+    margin: 0 0 10px 10px
+}
+
+.email{
+    width: 175px;
+}

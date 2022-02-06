@@ -1,6 +1,6 @@
-export const getGame = async () => {
+export const getGame = async (id) => {
   try{
-      const response = await fetch(`https://mmo-games.p.rapidapi.com/game?id=452`, {
+      const response = await fetch(`https://mmo-games.p.rapidapi.com/game?id=${id}`, {
               method: "GET",
               headers: {
                   "x-rapidapi-host": "mmo-games.p.rapidapi.com",
