@@ -71,14 +71,14 @@ export const Formulario = () => {
             <div>
             <H3>Comentários</H3>
             <Field name="nome" placeholder="Nome" className={styles.name}/>
-            <ErrorMessage name="nome" style={{ color: 'red' }} component="span" />
+            <ErrorMessage name="nome" style={{ color: 'black', fontWeight: 'bold'}} component="span" />
 
             <Field name="email" placeholder="E-mail" className={styles.email}/>
-            <ErrorMessage name="email" style={{ color: 'red' }} component="span" />
+            <ErrorMessage name="email" style={{ color: 'black', fontWeight: 'bold'}} component="span" />
 
             </div>
             <Field name="comentario" placeholder="Comentário"  className={styles.comentario}/>
-            <ErrorMessage name="comentario" style={{ color: 'red' }} component="span" />
+            <ErrorMessage name="comentario" style={{ color: 'black', fontWeight: 'bold' }} component="span" />
 
             <button type="submit" disabled={isSubmitting || !isValid}>
               Enviar
