@@ -13,7 +13,8 @@ export const CardGame = ({game}) => {
           <P>{game.title}</P> 
         </div>
       </Link>    
-      </Container>               
+      </Container>     
+                
     </Li>      
   </Main>      
   );    
